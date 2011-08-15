@@ -1,0 +1,9 @@
+[submodule "vendor/rhtml"]
+	path = vendor/rhtml
+	url = http://github.com/eschulte/rhtml.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = git://github.com/senny/rvm.el.git
+[submodule "vendor/rinari"]
+	path = vendor/rinari
+	url = git://github.com/eschulte/rinari.git
