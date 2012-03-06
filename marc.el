@@ -21,6 +21,13 @@
      	  (lambda () (rinari-launch)))
 
 ;;; rvm-mode
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm"))
-(require 'rvm)
-(rvm-use-default)
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm"))
+;; (require 'rvm)
+;; (rvm-use-default)
+
+(server-start)
+
+;; cucumber
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber"))
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
