@@ -10,3 +10,6 @@
 [submodule "vendor/cucumber"]
 	path = vendor/cucumber
 	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule "vendor/scss"]
+	path = vendor/scss
+	url = git://github.com/antonj/scss-mode.git

@@ -1,5 +1,12 @@
 ;; Marc's customizations
 
+;; server mode - makes editing from command line faster
+(server-start)
+
+;; Setting rbenv path
+(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ruby-block"))
@@ -20,14 +27,13 @@
 (add-hook 'rhtml-mode-hook
      	  (lambda () (rinari-launch)))
 
-;;; rvm-mode
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm"))
-;; (require 'rvm)
-;; (rvm-use-default)
-
-(server-start)
-
 ;; cucumber
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/cucumber"))
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; scss
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/scss"))
+(setq scss-sass-command "~/.rbenv/shims/sass")
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
